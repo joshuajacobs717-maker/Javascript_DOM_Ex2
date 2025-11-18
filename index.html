@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Profile Card</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+</head>
+<body>
+    <div id="profileCard">
+        <img id="profileImage" src="https://placehold.co/100x100">
+        <h2 id="profileName">Ginger Bon</h2>
+        <p id="profileRole">Healthy Sweet</p>
+        <p id="profileBio">Just existing in a world of bad sweets</p>
+        <div>
+            <button id="updateNameBtn">Update Name</button>
+            <button id="updateRoleBtn">Update Role</button>
+            <button id="updateImg">Update Image</button>
+            <button id="toggleStatusBtn">Toggle Active Status</button>
+            <button id="activeBtn" class="active-status"></button>
+            
+        </div>    
+    </div>
+    <script>
+        const updateName = document.getElementById("updateNameBtn")
+        const userName = document.getElementById("profileName")
+        updateName.addEventListener('click', function(){
+            let newName = prompt("Enter your name to update profile: ");
+            userName.textContent = newName
+
+        })
+
+        const updateRole = document.getElementById("updateRoleBtn")
+        const userRole = document.getElementById("profileRole")
+        updateRole.addEventListener('click', function(){
+            let newRole = prompt("Enter new role to update profile: ");
+            userRole.textContent = newRole
+
+        })
+
+        const updateImg = document.getElementById("updateImg")
+        const userImg = document.getElementById("profileImage")
+        updateImg.addEventListener('click', function(){
+            let newImg = prompt("Enter image url here: ");
+            userImg.src = newImg
+
+        })
+
+        const toggleStatus = document.getElementById("toggleStatusBtn");
+        const activeBtn = document.getElementById("activeBtn");
+
+        toggleStatus.addEventListener('click', function(){
+        activeBtn.classList.toggle("active-status");
+        })
+
+    </script>
+</body>
+</html>
